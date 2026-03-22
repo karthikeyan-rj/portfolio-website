@@ -80,7 +80,6 @@ nav {
     color: var(--text);
 }
 
-/* HERO */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -192,7 +191,6 @@ nav {
     object-fit: cover;
 }
 
-/* SECTIONS */
 section {
     padding: 6rem 4rem;
 }
@@ -210,7 +208,6 @@ section {
     color: var(--text);
 }
 
-/* ABOUT */
 .about-grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
@@ -257,7 +254,6 @@ section {
     letter-spacing: 0.06em;
 }
 
-/* SKILLS */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -282,7 +278,6 @@ section {
     margin-bottom: 0.85rem;
 }
 
-/* TAGS */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -299,7 +294,6 @@ section {
     border-radius: 3px;
 }
 
-/* PROJECTS */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -362,7 +356,6 @@ section {
     text-underline-offset: 3px;
 }
 
-/* CERTIFICATIONS */
 .cert-group {
     max-width: 960px;
     margin-bottom: 2.5rem;
@@ -412,7 +405,6 @@ section {
     white-space: nowrap;
 }
 
-/* INTERNSHIP */
 .internship-card {
     background: var(--bg);
     border: 1px solid var(--border);
@@ -451,7 +443,6 @@ section {
     padding-top: 0.2rem;
 }
 
-/* CONTACT */
 .contact-sub {
     font-size: 0.975rem;
     color: var(--muted);
@@ -509,7 +500,6 @@ section {
     font-weight: 500;
 }
 
-/* FOOTER */
 footer {
     padding: 1.5rem 4rem;
     border-top: 1px solid var(--border);
@@ -520,7 +510,6 @@ footer {
     color: var(--muted);
 }
 
-/* SCROLL REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -532,7 +521,6 @@ footer {
     transform: none;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
