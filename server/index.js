@@ -2,8 +2,13 @@ import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +24,34 @@ const transporter = nodemailer.createTransport({
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
   },
+});
+
+// ─── CV DOWNLOAD ───
+// Place CV at: public/documents/Karthikeyan_RJ_CV.pdf
+app.get("/api/cv/download", (req, res) => {
+  const filePath = path.join(__dirname, "..", "public", "documents", "Karthikeyan_RJ_CV.pdf");
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", 'attachment; filename="Karthikeyan_RJ_CV.pdf"');
+  res.download(filePath, "Karthikeyan_RJ_CV.pdf", (err) => {
+    if (err) {
+      console.error("CV download error:", err.message);
+      res.status(404).json({ error: "CV file not found" });
+    }
+  });
+});
+
+// ─── RESUME DOWNLOAD ───
+// Place Resume at: public/documents/Karthikeyan_RJ_Resume.pdf
+app.get("/api/resume/download", (req, res) => {
+  const filePath = path.join(__dirname, "..", "public", "documents", "Karthikeyan_RJ_Resume.pdf");
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", 'attachment; filename="Karthikeyan_RJ_Resume.pdf"');
+  res.download(filePath, "Karthikeyan_RJ_Resume.pdf", (err) => {
+    if (err) {
+      console.error("Resume download error:", err.message);
+      res.status(404).json({ error: "Resume file not found" });
+    }
+  });
 });
 
 app.post("/api/contact", async (req, res) => {
