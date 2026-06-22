@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// Add your CV PDF at: public/documents/Karthikeyan_RJ_CV.pdf
+import myPhoto from "../assets/images/MyPhoto.png";
 const cvPath = "/documents/Karthikeyan_RJ_CV.pdf";
 
 export default function Navbar() {
@@ -74,6 +74,7 @@ export default function Navbar() {
           className="nav-logo" 
           onClick={(e) => handleLinkClick(e, "hero")}
         >
+          <img src={myPhoto} alt="" className="nav-avatar" />
           KRJ<span>.</span>
         </a>
 

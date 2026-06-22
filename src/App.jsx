@@ -106,7 +106,7 @@ export default function App() {
 
     // Event delegation for cursor hover enlargement
     const handleMouseOver = (e) => {
-      const target = e.target.closest("a, button, .hero-photo-frame, .stack-icon-item, .project-card, .cert-card, .contact-direct-item, .copy-btn");
+      const target = e.target.closest("a, button, .stack-icon-item, .project-card, .cert-card, .contact-direct-item, .copy-btn");
       if (target) {
         cursorRef.current?.classList.add("hovered");
         followerRef.current?.classList.add("hovered");
@@ -114,7 +114,7 @@ export default function App() {
     };
 
     const handleMouseOut = (e) => {
-      const target = e.target.closest("a, button, .hero-photo-frame, .stack-icon-item, .project-card, .cert-card, .contact-direct-item, .copy-btn");
+      const target = e.target.closest("a, button, .stack-icon-item, .project-card, .cert-card, .contact-direct-item, .copy-btn");
       if (target) {
         cursorRef.current?.classList.remove("hovered");
         followerRef.current?.classList.remove("hovered");

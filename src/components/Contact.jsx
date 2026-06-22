@@ -3,10 +3,10 @@ import { personalDetails } from "../data/personal";
 // Add your CV PDF at: public/documents/Karthikeyan_RJ_CV.pdf
 const cvPath = "/documents/Karthikeyan_RJ_CV.pdf";
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const apiUrl = import.meta.env.VITE_API_URL || "";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", _gotcha: "" });
   const [copied, setCopied] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("Send Message →");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +37,7 @@ export default function Contact() {
       }
 
       setSubmitStatus("Sent ✓");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "", _gotcha: "" });
 
       setTimeout(() => setSubmitStatus("Send Message →"), 3000);
     } catch (err) {
@@ -118,6 +118,10 @@ export default function Contact() {
             </div>
           </div>
           
+          <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+            <input name="_gotcha" type="text" value={formData._gotcha} onChange={handleInputChange} tabIndex={-1} autoComplete="off" />
+          </div>
+
           <div className="contact-submit">
             <button
               type="submit"
