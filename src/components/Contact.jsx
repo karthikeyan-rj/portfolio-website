@@ -16,7 +16,8 @@ export default function Contact() {
     if (!section) return;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
+    const isMobile = window.innerWidth < 900;
+    if (prefersReducedMotion || isMobile) return;
 
     const baseCard = section.querySelector(".base-card");
     const overlayCard = section.querySelector(".overlay-card");
