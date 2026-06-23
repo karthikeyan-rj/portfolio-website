@@ -122,7 +122,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="footer-bottom">
         <span className="footer-copy-text">
-          © {currentYear} {personalDetails.name}. Designed & built with care.
+          © {currentYear} {personalDetails.name}. Built with React, Vite, and careful attention to detail.
         </span>
         <span className="footer-made-with">
           Made with <span className="heart">♥</span> in Madurai, India

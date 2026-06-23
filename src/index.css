@@ -52,7 +52,7 @@ body {
   color: var(--text);
   overflow-x: hidden;
   line-height: 1.7;
-  font-weight: 450;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -231,6 +231,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   color: var(--text-muted);
+  font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
   transition: color 0.2s, background-color 0.2s;
@@ -269,9 +270,9 @@ body {
   border: 1.5px solid var(--accent-border);
   padding: 0.5rem 1.35rem;
   border-radius: 9999px;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 .nav-resume-btn:hover {
   background: var(--accent);
@@ -367,7 +368,7 @@ body {
 
 /* ═══ TYPOGRAPHY ═══ */
 p, .section-card-desc, .project-card-desc, .about-body p, .cert-name {
-  font-weight: 450;
+  font-weight: 500;
   line-height: 1.75;
   color: var(--text-secondary);
 }
@@ -388,6 +389,7 @@ section:not(#hero):not(.card-section-wrapper) {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
+  font-weight: 700;
   margin-bottom: 0.75rem;
 }
 .section-title {
@@ -428,7 +430,7 @@ section:not(#hero):not(.card-section-wrapper) {
 
 /* ═══ CARD FALL-APART / REBUILD ANIMATION ═══ */
 .animated-card {
-  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.45s ease;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
   transition-delay: var(--item-delay, 0s);
   will-change: transform, opacity;
 }
@@ -482,11 +484,6 @@ section:not(#hero):not(.card-section-wrapper) {
 .card-section-wrapper#resume {
   background: var(--bg-alt);
 }
-.card-section-wrapper#contact {
-  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-blue-soft) 100%);
-}
-
-/* ═══ HERO ═══ */
 #hero {
   min-height: 100vh;
   padding-top: var(--nav-h);
@@ -548,6 +545,8 @@ section:not(#hero):not(.card-section-wrapper) {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .hero-tag {
@@ -557,15 +556,6 @@ section:not(#hero):not(.card-section-wrapper) {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 1.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.hero-tag::before {
-  content: '';
-  width: 16px;
-  height: 1.5px;
-  background: var(--accent);
 }
 .hero-name-wrap {
   overflow: hidden;
@@ -586,7 +576,8 @@ section:not(#hero):not(.card-section-wrapper) {
   line-height: 1.65;
   margin-bottom: 3rem;
   max-width: 640px;
-  font-weight: 300;
+  margin-inline: auto;
+  font-weight: 400;
 }
 .hero-tagline strong {
   color: var(--text);
@@ -597,6 +588,7 @@ section:not(#hero):not(.card-section-wrapper) {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
   margin-bottom: 3.5rem;
 }
 .btn-primary {
@@ -607,8 +599,8 @@ section:not(#hero):not(.card-section-wrapper) {
   color: #FFFFFF;
   padding: 0.85rem 1.85rem;
   border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 650;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -629,8 +621,8 @@ section:not(#hero):not(.card-section-wrapper) {
   border: 1.5px solid var(--border-hover);
   padding: 0.85rem 1.85rem;
   border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 650;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -647,6 +639,7 @@ section:not(#hero):not(.card-section-wrapper) {
   display: flex;
   gap: 1.25rem;
   align-items: center;
+  justify-content: center;
 }
 .hero-social-link {
   font-family: var(--mono);
@@ -656,6 +649,7 @@ section:not(#hero):not(.card-section-wrapper) {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  font-weight: 500;
   transition: color 0.2s;
   padding: 0.25rem 0;
   border-bottom: 1px solid transparent;
@@ -750,7 +744,7 @@ section:not(#hero):not(.card-section-wrapper) {
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   background: #FFFFFF;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .about-tag:hover {
   border-color: var(--accent);
@@ -780,7 +774,7 @@ section:not(#hero):not(.card-section-wrapper) {
   border: var(--card-border);
   box-shadow: var(--card-shadow);
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .about-photo-card-inner:hover {
   box-shadow: var(--card-shadow-hover);
@@ -892,7 +886,7 @@ section:not(#hero):not(.card-section-wrapper) {
   border: 1px solid transparent;
   padding: 0.45rem 1rem;
   border-radius: 9999px;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .skill-pill:hover {
   color: var(--accent);
@@ -967,7 +961,7 @@ section:not(#hero):not(.card-section-wrapper) {
   box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
   padding: 14px 0;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .ticker:hover {
   transform: translateY(-3px);
@@ -1033,6 +1027,7 @@ section:not(#hero):not(.card-section-wrapper) {
   gap: 1.25rem;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .project-card::before {
   content: '';
@@ -1044,7 +1039,7 @@ section:not(#hero):not(.card-section-wrapper) {
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .project-card:hover::before {
   transform: scaleX(1);
@@ -1100,7 +1095,8 @@ section:not(#hero):not(.card-section-wrapper) {
   border: 1.5px solid var(--border);
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  transition: all 0.25s ease;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1171,7 +1167,8 @@ section:not(#hero):not(.card-section-wrapper) {
   border: 1.5px solid var(--border);
   padding: 0.45rem 1rem;
   border-radius: 9999px;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -1207,7 +1204,7 @@ section:not(#hero):not(.card-section-wrapper) {
   z-index: 10;
   overflow: hidden;
   margin: 0 auto;
-  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .portfolio-floating-card:hover {
@@ -1269,14 +1266,40 @@ section:not(#hero):not(.card-section-wrapper) {
   font-size: 0.78rem;
 }
 
-/* Resume single column layout */
-.resume-single-column {
+/* Resume grid layout */
+.resume-card .section-card-desc {
+  margin-bottom: 2rem;
+}
+
+.resume-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
   position: relative;
   z-index: 5;
+}
+
+.resume-actions a {
+  min-width: 150px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .resume-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .resume-actions a {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-actions {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Form Styles inside Card 2 */
@@ -1361,9 +1384,9 @@ section:not(#hero):not(.card-section-wrapper) {
   color: #FFFFFF;
   padding: 1rem 2.5rem;
   border-radius: 9999px;
-  font-weight: 600;
+  font-weight: 650;
   border: 1px solid transparent;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
 }
 
@@ -1401,7 +1424,7 @@ section:not(#hero):not(.card-section-wrapper) {
   font-size: 1rem;
   color: var(--text);
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact-direct-link-card:hover {
@@ -1417,7 +1440,7 @@ section:not(#hero):not(.card-section-wrapper) {
 }
 
 .direct-item-label {
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
 }
@@ -1442,7 +1465,8 @@ section:not(#hero):not(.card-section-wrapper) {
   border: 1.5px solid var(--accent-border);
   padding: 0.45rem 1.15rem;
   border-radius: 9999px;
-  transition: all 0.25s ease;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   background: transparent;
 }
 
@@ -1483,11 +1507,273 @@ section:not(#hero):not(.card-section-wrapper) {
   color: var(--text-secondary);
 }
 
+/* ═══ CONTACT STACKED CARD WIPE ANIMATION ═══ */
+.contact-card-stage {
+  position: relative;
+  min-height: 200vh;
+  padding: 0 !important;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-blue-soft) 100%);
+  overflow-x: clip;
+}
+
+.contact-card-stack::before,
+.contact-card-stack::after,
+.stacked-card::before,
+.stacked-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+.contact-sticky-wrap {
+  position: sticky;
+  top: 56px;
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(12px, 2vw, 28px) clamp(20px, 5vw, 64px);
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.contact-card-stack {
+  position: relative;
+  width: min(76vw, 1060px);
+  margin: 0 auto;
+}
+
+.contact-card-stack .scroll-layer {
+  width: 100%;
+}
+
+.contact-card-stack .base-card {
+  position: relative;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+.contact-card-stack .overlay-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 2;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.contact-card-stack .overlay-card .portfolio-floating-card {
+  height: 100%;
+}
+
+.contact-card-stack,
+.contact-card-stack .scroll-layer,
+.contact-card-stack .portfolio-floating-card {
+  border-radius: clamp(26px, 2.5vw, 40px);
+}
+
+.contact-card-stack .portfolio-floating-card {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 3.2vw, 44px);
+}
+
+.contact-card-stack .section-card-title {
+  margin-bottom: 1rem;
+}
+
+.contact-card-stack .section-card-desc {
+  margin-bottom: 1.25rem;
+}
+
+.contact-card-stack .contact-form {
+  gap: clamp(12px, 1.4vw, 18px);
+}
+
+.contact-card-stack .form-field-grid {
+  gap: 1.25rem;
+}
+
+.contact-card-stack .form-field textarea {
+  min-height: 105px;
+}
+
+.contact-card-stack .contact-submit {
+  margin-top: 0.6rem;
+}
+
+.contact-card-stack .section-label {
+  margin-bottom: 1rem !important;
+}
+
+.contact-card-stack .contact-direct-grid {
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card-stack .contact-direct-link-card,
+.contact-card-stack .contact-direct-item.email-item {
+  padding: 1.15rem 1.5rem;
+}
+
+.contact-card-stack .contact-footer-note {
+  padding-top: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card-stage {
+    min-height: auto;
+    padding: 48px 2rem !important;
+  }
+  .contact-sticky-wrap {
+    position: relative;
+    top: auto;
+    min-height: auto;
+    height: auto;
+    display: block;
+    padding: 0;
+  }
+  .contact-card-stack .portfolio-floating-card {
+    padding: 2rem;
+  }
+  .contact-card-stack .section-card-title {
+    margin-bottom: 1rem;
+  }
+  .contact-card-stack .section-card-desc {
+    margin-bottom: 1.25rem;
+  }
+  .contact-card-stack .form-field textarea {
+    min-height: 100px;
+  }
+  .contact-card-stack .contact-form {
+    gap: 1rem;
+  }
+  .contact-card-stack .form-field-grid {
+    gap: 1rem;
+  }
+  .contact-card-stack .contact-submit {
+    margin-top: 0.5rem;
+  }
+  .contact-card-stack .section-label {
+    margin-bottom: 0.75rem !important;
+  }
+  .contact-card-stack .contact-direct-grid {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact-card-stack .contact-direct-link-card,
+  .contact-card-stack .contact-direct-item.email-item {
+    padding: 1rem 1.25rem;
+  }
+  .contact-card-stack .contact-footer-note {
+    padding-top: 1rem;
+  }
+  .contact-card-stack {
+    width: 100%;
+    max-width: 1050px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contact-card-stack .scroll-layer {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 75%;
+    margin: 0 auto;
+  }
+  .contact-card-stack .overlay-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .contact-card-stack .base-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-card-stage {
+    min-height: auto;
+    padding: 48px 2rem !important;
+  }
+  .contact-sticky-wrap {
+    position: relative;
+    top: auto;
+    min-height: auto;
+    height: auto;
+    display: block;
+    padding: 0;
+  }
+  .contact-card-stack .portfolio-floating-card {
+    padding: 2rem;
+  }
+  .contact-card-stack .section-card-title {
+    margin-bottom: 1rem;
+  }
+  .contact-card-stack .section-card-desc {
+    margin-bottom: 1.25rem;
+  }
+  .contact-card-stack .form-field textarea {
+    min-height: 100px;
+  }
+  .contact-card-stack .contact-form {
+    gap: 1rem;
+  }
+  .contact-card-stack .form-field-grid {
+    gap: 1rem;
+  }
+  .contact-card-stack .contact-submit {
+    margin-top: 0.5rem;
+  }
+  .contact-card-stack .section-label {
+    margin-bottom: 0.75rem !important;
+  }
+  .contact-card-stack .contact-direct-grid {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact-card-stack .contact-direct-link-card,
+  .contact-card-stack .contact-direct-item.email-item {
+    padding: 1rem 1.25rem;
+  }
+  .contact-card-stack .contact-footer-note {
+    padding-top: 1rem;
+  }
+  .contact-card-stack {
+    width: 100%;
+    max-width: 1050px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contact-card-stack .scroll-layer {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 0;
+  }
+  .contact-card-stack .overlay-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .contact-card-stack .base-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ═══ FOOTER ═══ */
 .footer-redesigned {
   position: relative;
   overflow: hidden;
-  background: var(--bg-warm);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-warm) 40%);
   padding: 0;
 }
 .footer-glow {
@@ -1540,9 +1826,9 @@ section:not(#hero):not(.card-section-wrapper) {
   border-radius: 40px;
   font-family: var(--mono);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 650;
   text-decoration: none;
-  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  transition: background 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
 }
 .footer-cta-btns .btn-primary:hover {
@@ -1561,9 +1847,9 @@ section:not(#hero):not(.card-section-wrapper) {
   border-radius: 40px;
   font-family: var(--mono);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 650;
   text-decoration: none;
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+  transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
 }
 .footer-cta-btns .btn-outline:hover {
@@ -1581,7 +1867,7 @@ section:not(#hero):not(.card-section-wrapper) {
   border-radius: 40px;
   padding: 1rem 1.4rem;
   cursor: pointer;
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+  transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   flex-shrink: 0;
 }
 .back-to-top:hover {
@@ -1663,7 +1949,7 @@ section:not(#hero):not(.card-section-wrapper) {
   color: var(--text-muted);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  transition: background 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), color 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .footer-social-icon:hover {
   background: var(--accent-light);
@@ -1680,8 +1966,9 @@ section:not(#hero):not(.card-section-wrapper) {
 .footer-links a {
   font-family: var(--mono);
   font-size: 0.8rem;
+  font-weight: 500;
   color: var(--text-secondary);
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1), padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1693,7 +1980,7 @@ section:not(#hero):not(.card-section-wrapper) {
 }
 .footer-links a .fl-arr {
   opacity: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   font-size: 0.7rem;
 }
 .footer-links a:hover .fl-arr {
@@ -1813,16 +2100,6 @@ section:not(#hero):not(.card-section-wrapper) {
   }
   .hamburger {
     display: flex;
-  }
-  .resume-inner {
-    grid-template-columns: 1fr;
-  }
-  .resume-left {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .resume-right {
-    padding: 4rem 2rem;
   }
   .contact-inner {
     grid-template-columns: 1fr;

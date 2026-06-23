@@ -6,40 +6,27 @@ const resumePath = "/documents/Karthikeyan_RJ_Resume.pdf";
 export default function Resume() {
   return (
     <section id="resume" className="card-section-wrapper">
-      <div className="portfolio-floating-card cv-resume-card reveal">
+      <div className="portfolio-floating-card resume-card reveal">
         
-        <div className="resume-single-column">
-          <div className="section-label">(Resume)</div>
-          <h2 className="section-card-title">
-            Resume / CV
-          </h2>
-          <p className="section-card-desc">
-            My resume covers my education, projects, internship at Phoenix Softech, certifications, and technical skills. Updated for 2026 placements and internship applications.
-          </p>
+        <div className="section-label">(Resume)</div>
+        <h2 className="section-card-title">Resume / CV</h2>
+        <p className="section-card-desc">
+          I'm currently preparing for 2027 and 2028 placement and internship opportunities. My resume and CV highlight my education, projects, certifications, technical skills, and practical software development experience.
+        </p>
 
-          <p style={{ fontFamily: "var(--mono)", fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem", marginTop: "0.5rem" }}>
-            CV
-          </p>
-          <div className="card-actions-row" style={{ marginBottom: "1.25rem" }}>
-            <a href={cvPath} target="_blank" rel="noreferrer" className="btn-outline">
-              <i className="fas fa-eye"></i> View CV
-            </a>
-            <a href={cvPath} download="Karthikeyan_RJ_CV.pdf" className="btn-primary">
-              <i className="fas fa-download"></i> Download CV
-            </a>
-          </div>
-
-          <p style={{ fontFamily: "var(--mono)", fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>
-            Resume
-          </p>
-          <div className="card-actions-row">
-            <a href={resumePath} target="_blank" rel="noreferrer" className="btn-outline">
-              <i className="fas fa-eye"></i> View Resume
-            </a>
-            <a href={resumePath} download="Karthikeyan_RJ_Resume.pdf" className="btn-primary">
-              <i className="fas fa-download"></i> Download Resume
-            </a>
-          </div>
+        <div className="resume-actions">
+          <a href={cvPath} target="_blank" rel="noreferrer" className="btn-outline">
+            <i className="fas fa-eye"></i> View CV
+          </a>
+          <a href={cvPath} download="Karthikeyan_RJ_CV.pdf" className="btn-primary">
+            <i className="fas fa-download"></i> Download CV
+          </a>
+          <a href={resumePath} target="_blank" rel="noreferrer" className="btn-outline">
+            <i className="fas fa-eye"></i> View Resume
+          </a>
+          <a href={resumePath} download="Karthikeyan_RJ_Resume.pdf" className="btn-primary">
+            <i className="fas fa-download"></i> Download Resume
+          </a>
         </div>
 
       </div>

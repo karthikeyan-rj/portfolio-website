@@ -6,30 +6,30 @@ const mailTo = process.env.MAIL_TO || "karthikeyanrj78450@gmail.com";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method not allowed" });
+    return res.status(405).json({ success: false, error: "Method not allowed" });
   }
 
   try {
     const { name, email, subject, message, _gotcha } = req.body;
 
     if (_gotcha) {
-      return res.status(200).json({ success: true, message: "Spam detected" });
+      return res.status(200).json({ success: true });
     }
 
     if (!name || !name.trim()) {
-      return res.status(400).json({ success: false, message: "Name is required" });
+      return res.status(400).json({ success: false, error: "Name is required" });
     }
     if (!email || !email.trim()) {
-      return res.status(400).json({ success: false, message: "Email is required" });
+      return res.status(400).json({ success: false, error: "Email is required" });
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return res.status(400).json({ success: false, message: "Invalid email format" });
+      return res.status(400).json({ success: false, error: "Invalid email format" });
     }
     if (!message || !message.trim()) {
-      return res.status(400).json({ success: false, message: "Message is required" });
+      return res.status(400).json({ success: false, error: "Message is required" });
     }
     if (message.trim().length > 5000) {
-      return res.status(400).json({ success: false, message: "Message too long (max 5000 characters)" });
+      return res.status(400).json({ success: false, error: "Message too long (max 5000 characters)" });
     }
 
     const { error } = await resend.emails.send({
@@ -51,11 +51,11 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      return res.status(500).json({ success: false, message: "Failed to send email" });
+      return res.status(500).json({ success: false, error: "Failed to send email" });
     }
 
-    return res.status(200).json({ success: true, message: "Message sent successfully" });
+    return res.status(200).json({ success: true });
   } catch {
-    return res.status(500).json({ success: false, message: "Failed to send message. Please try again later." });
+    return res.status(500).json({ success: false, error: "Failed to send message. Please try again later." });
   }
 }
