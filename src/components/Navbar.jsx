@@ -62,7 +62,7 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

@@ -22,6 +22,9 @@ export default function Contact() {
     const overlayCard = section.querySelector(".overlay-card");
     if (!baseCard || !overlayCard) return;
 
+    const ANIM_START = 0.15;
+    const ANIM_END = 0.80;
+
     const overlayShadow = "0 34px 90px rgba(15, 23, 42, 0.20), -8px 0 35px rgba(15, 23, 42, 0.07)";
     const defaultShadow = "0 18px 45px rgba(15, 23, 42, 0.10)";
 
@@ -40,27 +43,38 @@ export default function Contact() {
 
         const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
 
-        const activeEl = document.activeElement;
-        const isFormFocused = activeEl && section.contains(activeEl);
-        if (isFormFocused) { ticking = false; return; }
+        // Map through animation window:
+        //   0%–15%:  base card stable (Contact)
+        //   15%–80%: overlay slides in
+        //   80%–100%: overlay card stable (Get in Touch)
+        const rawProgress = (progress - ANIM_START) / (ANIM_END - ANIM_START);
+        const animProgress = Math.max(0, Math.min(1, rawProgress));
+        const eased = easeOut(animProgress);
 
-        const rawProgress = (progress - 0.12) / 0.76;
-        const overlayProgress = Math.max(0, Math.min(1, rawProgress));
-        const eased = easeOut(overlayProgress);
-
+        // Overlay card: starts at translateX(105%), ends at 0%
         const overlayX = `${105 - eased * 105}%`;
         const overlayScale = 0.985 + eased * 0.015;
 
+        // Base card: slides left slightly and scales down
         const baseX = `${-eased * 28}px`;
         const baseScaleVal = 1 - eased * 0.04;
 
         overlayCard.style.transform = `translate3d(${overlayX}, 0, 0) scale(${overlayScale})`;
         overlayCard.style.opacity = 1;
         overlayCard.style.boxShadow = eased > 0.1 ? overlayShadow : defaultShadow;
-        overlayCard.style.pointerEvents = overlayProgress > 0.8 ? "auto" : "none";
 
         baseCard.style.transform = `translate3d(${baseX}, 0, 0) scale(${baseScaleVal})`;
-        baseCard.style.opacity = Math.max(0, 1 - overlayProgress * overlayProgress);
+        baseCard.style.opacity = Math.max(0, 1 - animProgress * animProgress);
+
+        // Permissive pointer-events: both cards clickable during overlap.
+        // Base card stays clickable while still visible (until ~78% into animation).
+        // Overlay card becomes clickable once it's visibly present (from ~25% into animation).
+        // During 0.25–0.78 both cards are clickable — invisible regions don't block.
+        const baseActive = animProgress < 0.78;
+        const overlayActive = animProgress > 0.25;
+
+        baseCard.style.pointerEvents = baseActive ? "auto" : "none";
+        overlayCard.style.pointerEvents = overlayActive ? "auto" : "none";
 
         ticking = false;
       });
