@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { personalDetails } from "../data/personal";
-const cvPath = "/documents/Karthikeyan_RJ_CV.pdf";
 
 export default function Hero() {
   const [scrambleText, setScrambleText] = useState("");
@@ -81,9 +80,6 @@ export default function Hero() {
             <a href="#projects" className="btn-primary" onClick={handleScrollToProjects}>
               View Projects →
             </a>
-        <a href={cvPath} download="Karthikeyan_RJ_CV.pdf" className="btn-outline">
-          <i className="fas fa-download"></i> Resume
-        </a>
             <a href={personalDetails.github} target="_blank" rel="noreferrer" className="btn-outline">
               <i className="fab fa-github"></i> GitHub
             </a>

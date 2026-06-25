@@ -7,7 +7,6 @@ import TechStack from "./components/TechStack";
 import Ticker from "./components/Ticker";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
-import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -232,9 +231,6 @@ export default function App() {
           </div>
           <div className="section-stack">
             <Certifications />
-          </div>
-          <div className="section-stack">
-            <Resume />
           </div>
           <div className="section-stack">
             <Contact />

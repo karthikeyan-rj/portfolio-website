@@ -13,7 +13,7 @@ export default function Certifications() {
         </div>
         <div className="certs-grid">
           {certifications.map((cert, idx) => (
-            <div key={idx} className="cert-card animated-card"
+            <div key={idx} className="cert-card animated-card liquid-card"
               style={{
                 '--item-delay': `${idx * 0.07}s`,
               }}>

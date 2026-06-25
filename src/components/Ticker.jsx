@@ -6,7 +6,7 @@ export default function Ticker() {
   const doubleItems = [...personalDetails.tickerItems, ...personalDetails.tickerItems];
 
   return (
-    <div className="ticker" aria-hidden="true">
+    <div className="ticker liquid-card" aria-hidden="true">
       <div className="ticker-track">
         {doubleItems.map((item, idx) => (
           <span key={idx} className="ticker-item">

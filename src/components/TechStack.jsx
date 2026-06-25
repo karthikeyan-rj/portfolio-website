@@ -19,7 +19,7 @@ export default function TechStack() {
               {section.items.map((item, itemIdx) => {
                 const globalIdx = idx * 100 + itemIdx;
                 return (
-                <div key={itemIdx} className="stack-icon-item animated-card"
+                <div key={itemIdx} className="stack-icon-item animated-card liquid-card"
                   style={{
                     '--item-delay': `${(globalIdx % 12) * 0.04}s`,
                   }}>

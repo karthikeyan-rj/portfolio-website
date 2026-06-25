@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
 import myPhoto from "../assets/images/MyPhoto.png";
-const cvPath = "/documents/Karthikeyan_RJ_CV.pdf";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   // Track scrolling for progress bar and background fill
   useEffect(() => {
@@ -92,9 +101,20 @@ export default function Navbar() {
         </div>
 
         <div className="nav-right">
-          <a href={cvPath} download="Karthikeyan_RJ_CV.pdf" className="nav-resume-btn">
-            Resume ↓
+          <a
+            href="/documents/Karthikeyan_RJ_Resume.pdf"
+            download="Karthikeyan_RJ_Resume.pdf"
+            className="nav-resume-btn"
+          >
+            Resume
           </a>
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+          >
+            {theme === "dark" ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
+          </button>
           <button 
             className={`hamburger ${mobileMenuOpen ? "open" : ""}`} 
             onClick={toggleMobileMenu}
@@ -119,9 +139,12 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        {/* Mobile Resume Link */}
-        <a href={cvPath} download="Karthikeyan_RJ_CV.pdf" className="mob-link">
-          Download Resume (PDF)
+        <a
+          href="/documents/Karthikeyan_RJ_Resume.pdf"
+          download="Karthikeyan_RJ_Resume.pdf"
+          className="mob-link mob-resume-link"
+        >
+          Resume ↓
         </a>
       </div>
 

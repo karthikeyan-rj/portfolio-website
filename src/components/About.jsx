@@ -74,7 +74,7 @@ export default function About() {
             ref={cardRef}
           >
             <div
-              className="about-photo-card-inner"
+              className="about-photo-card-inner liquid-card"
               style={{
                 transform: isMobile ? "none" : `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
               }}
@@ -91,7 +91,7 @@ export default function About() {
           </div>
           <div className="about-stats-row">
             {personalDetails.stats.map((stat, idx) => (
-              <div key={idx} className="about-stat">
+              <div key={idx} className="about-stat liquid-card">
                 <span className="about-stat-num">{stat.value}</span>
                 <span className="about-stat-lbl">{stat.label}</span>
               </div>

@@ -13,7 +13,7 @@ export default function Skills() {
         </div>
         <div className="skills-grid">
           {skillCategories.map((cat, idx) => (
-            <div key={idx} className="skill-cat animated-card"
+            <div key={idx} className="skill-cat animated-card liquid-card"
               style={{
                 '--item-delay': `${idx * 0.08}s`,
               }}>

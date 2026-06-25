@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { personalDetails } from "../data/personal";
-const cvPath = "/documents/Karthikeyan_RJ_CV.pdf";
 
 const apiUrl = import.meta.env.VITE_API_URL || "";
 
@@ -127,7 +126,7 @@ export default function Contact() {
       <div className="contact-sticky-wrap">
         <div className="contact-card-stack">
           <div className="scroll-layer base-card">
-            <div className="portfolio-floating-card">
+            <div className="portfolio-floating-card liquid-card">
               <div className="section-label" style={{ marginBottom: "1.5rem" }}>(Contact)</div>
               <h2 className="section-card-title">
                 Got a project in mind or just want to say <em>hello?</em>
@@ -199,12 +198,12 @@ export default function Contact() {
           </div>
 
           <div className="scroll-layer overlay-card">
-            <div className="portfolio-floating-card">
+            <div className="portfolio-floating-card liquid-card">
               <div className="section-label" style={{ marginBottom: "1.5rem" }}>(Get in Touch)</div>
               <h2 className="section-card-title">Or reach out directly</h2>
               
               <div className="contact-direct-grid">
-                <div className="contact-direct-item email-item">
+                <div className="contact-direct-item email-item liquid-card">
                   <span className="direct-item-label">
                     <i className="fas fa-envelope" style={{ marginRight: "0.5rem", color: "var(--accent)" }}></i>
                     Email
@@ -225,7 +224,7 @@ export default function Contact() {
                   href={personalDetails.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="contact-direct-link-card"
+                  className="contact-direct-link-card liquid-card"
                 >
                   <span>
                     <i className="fab fa-linkedin" style={{ marginRight: "0.5rem", color: "var(--accent)" }}></i>
@@ -238,7 +237,7 @@ export default function Contact() {
                   href={personalDetails.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="contact-direct-link-card"
+                  className="contact-direct-link-card liquid-card"
                 >
                   <span>
                     <i className="fab fa-github" style={{ marginRight: "0.5rem", color: "var(--accent)" }}></i>
@@ -247,17 +246,6 @@ export default function Contact() {
                   <span className="ci-arrow">↗</span>
                 </a>
                 
-                <a 
-                  href={cvPath} 
-                  download="Karthikeyan_RJ_CV.pdf" 
-                  className="contact-direct-link-card download-link-card"
-                >
-                  <span>
-                    <i className="fas fa-file-pdf" style={{ marginRight: "0.5rem", color: "var(--accent)" }}></i>
-                    Download Resume
-                  </span>
-                  <span className="ci-arrow">↓</span>
-                </a>
               </div>
 
               <div className="contact-footer-note">

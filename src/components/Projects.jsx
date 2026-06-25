@@ -16,7 +16,7 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <div
               key={project.id}
-              className="project-card animated-card"
+              className="project-card animated-card liquid-card"
               style={{
                 "--item-delay": `${idx * 0.1}s`,
               }}
