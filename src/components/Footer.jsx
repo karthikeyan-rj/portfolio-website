@@ -103,7 +103,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span className="footer-copy-text">
-            © {currentYear} {personalDetails.name}. All rights reserved.
+            © {currentYear} • Built with ❤️ by Karthikeyan R J
           </span>
         </div>
       </div>

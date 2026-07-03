@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import myPhoto from "../assets/images/MyPhoto.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const progressFillRef = useRef(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
@@ -19,17 +19,34 @@ export default function Navbar() {
 
   // Track scrolling for progress bar and background fill
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
+    let ticking = false;
 
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        setProgress((window.scrollY / totalHeight) * 100);
+    const updateScroll = () => {
+      const isScrolled = window.scrollY > 60;
+      setScrolled((prev) => {
+        if (prev !== isScrolled) return isScrolled;
+        return prev;
+      });
+
+      if (progressFillRef.current) {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scaleVal = docHeight > 0 ? scrollTop / docHeight : 0;
+        progressFillRef.current.style.transform = `scaleX(${scaleVal})`;
+      }
+
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   // Set up intersection observer for active section highlighting
@@ -150,7 +167,7 @@ export default function Navbar() {
 
       {/* Scroll Progress Indicator */}
       <div className="progress-bar">
-        <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+        <div className="progress-fill" ref={progressFillRef}></div>
       </div>
     </>
   );

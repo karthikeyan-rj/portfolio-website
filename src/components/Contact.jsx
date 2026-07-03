@@ -269,7 +269,7 @@ export default function Contact() {
                   Madurai, Tamil Nadu, India
                 </div>
                 <div className="footer-stats-col">
-                  IEEE Student Member · CGPA {personalDetails.cgpa}
+                  CGPA {personalDetails.cgpa}
                 </div>
               </div>
             </div>

@@ -682,8 +682,10 @@ body {
 .progress-fill {
   height: 100%;
   background: var(--accent);
-  width: 0%;
-  transition: width 0.1s;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
 }
 
 /* ═══ TYPOGRAPHY ═══ */
@@ -1386,6 +1388,7 @@ section:not(#hero):not(.card-section-wrapper) {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
 }
 .project-card:hover::before {
   transform: scaleX(1);
@@ -1684,6 +1687,7 @@ section:not(#hero):not(.card-section-wrapper) {
 
 .form-field textarea {
   min-height: 140px;
+  overflow: auto;
 }
 
 .char-count {
@@ -1941,8 +1945,8 @@ section:not(#hero):not(.card-section-wrapper) {
 .contact-card-stack .form-field textarea {
   min-height: 85px;
   max-height: 110px;
-  overflow: hidden;
-  resize: vertical;
+  overflow: auto;
+  resize: none;
 }
 
 .contact-card-stack .contact-submit {
@@ -1992,8 +1996,8 @@ section:not(#hero):not(.card-section-wrapper) {
   .contact-card-stack .form-field textarea {
     min-height: 85px;
     max-height: 110px;
-    overflow: hidden;
-    resize: vertical;
+    overflow: auto;
+    resize: none;
   }
   .contact-card-stack .contact-form {
     gap: 0.75rem;
