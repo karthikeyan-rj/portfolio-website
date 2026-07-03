@@ -11,11 +11,7 @@ export const personalDetails = {
   tagline: "Building full-stack web applications and exploring cybersecurity - from database schemas to polished UIs. Currently a 3rd-year CSE student at Thiagarajar College of Engineering.",
   aboutParagraphs: [
     "I'm a third-year B.E. Computer Science & Engineering student at Thiagarajar College of Engineering, Madurai (Batch 2024–2028), maintaining a CGPA of 8.39.",
-<<<<<<< HEAD
-    "I enjoy building real-world software - from REST APIs and database schemas to responsive React frontends. My focus is on writing clean, maintainable code that solves actual problems rather than demo-ware. I've shipped a real-time multiplayer app, a healthcare hackathon project, and several productivity tools.",
-=======
     "I enjoy building real-world software — from REST APIs and database schemas to responsive React frontends. My focus is on writing clean, maintainable code that solves actual problems rather than demo-ware. I've shipped a real-time multiplayer app, a healthcare hackathon project, and several productivity tools.",
->>>>>>> 42f2e5c (Changed resume and improved bug)
     "Outside of code, I'm an active IEEE Student Member at TCE, a competitive programmer with 4000+ problems solved on SkillRack, and an IEEEXtreme participant (World Rank ~1947). I also play chess and train regularly at the gym.",
     "I'm currently open to internships and collaborative projects in software engineering, full-stack development, and cybersecurity."
   ],
