@@ -1,33 +1,23 @@
 export const certifications = [
   {
-    title: "Introduction to Software Engineering",
+    title: "IBM Full Stack Software Developer - Professional certificate",
     platform: "Coursera",
-    certificateUrl: "https://coursera.org/share/f7b28a114c88aaa862bd475a254d170d"
+    certificateUrl: "https://coursera.org/share/16982e283f0c9ba80fb5a938d7359ee5"
   },
   {
-    title: "Introduction to HTML, CSS, & JavaScript",
+    title: "Google AI Professional Certificate",
     platform: "Coursera",
-    certificateUrl: "https://coursera.org/share/26a16fad70f3a286e6e1d6ffc2b71d76"
+    certificateUrl: "https://coursera.org/share/3a88b760f7e3e4da50ab60dece055250"
   },
   {
-    title: "Getting Started with Git and GitHub",
+    title: "Google Cloud Certification: Cloud Engineer Specialization.",
     platform: "Coursera",
-    certificateUrl: "https://coursera.org/share/dafada206972839300e09f8a33df8a5d"
+    certificateUrl: "https://coursera.org/share/4f60258abfc0d5179b6df6492217796b" 
   },
   {
-    title: "Developing AI Applications with Python and Flask",
+    title: "Machine Learning Specialization",
     platform: "Coursera",
-    certificateUrl: "https://coursera.org/share/58194e687f7be6c9c276c9a40e184ddf"
-  },
-  {
-    title: "Python for Data Science, AI & Development",
-    platform: "Coursera",
-    certificateUrl: "https://coursera.org/share/fe2570a289b4b0a392793bf78885a03d"
-  },
-  {
-    title: "Introduction to Cloud Computing",
-    platform: "Coursera",
-    certificateUrl: "https://coursera.org/share/d845197695cf76c090abb993d55bb39e"
+    certificateUrl: "https://coursera.org/share/1c5a225362f9c3e37d5b4c5c26a439f6"
   },
   {
     title: "Applied Software Engineering Fundamentals",
