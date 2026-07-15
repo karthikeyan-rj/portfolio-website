@@ -1,26 +1,26 @@
 export const skillCategories = [
   {
     category: "Programming Languages",
-    skills: ["Java", "Python", "JavaScript", "C", "SQL"]
+    skills: ["Java", "Python"]
   },
   {
     category: "Frontend",
-    skills: ["React", "HTML5", "CSS3", "Tailwind CSS", "Vite"]
+    skills: ["React", "Vite", "JavaScript"]
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express.js", "Flask", "REST APIs", "Socket.IO"]
+    skills: ["Node.js", "Express.js", "REST APIs", "Socket.IO"]
   },
   {
     category: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Oracle SQL"]
+    skills: ["MongoDB", "MySQL"]
   },
   {
     category: "Tools & Platforms",
     skills: ["Git", "GitHub", "VS Code", "Postman", "Linux", "Figma", "Vercel", "Render"]
   },
   {
-    category: "AI / ML / Cloud / Other",
+    category: "Other intrests",
     skills: ["Python (AI/ML)", "IBM Cloud", "Data Science", "Cybersecurity", "Ethical Hacking", "Network Security"]
   }
 ];
@@ -31,9 +31,6 @@ export const techStackIcons = [
     items: [
       { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-      { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
     ]
   },
   {
@@ -49,7 +46,6 @@ export const techStackIcons = [
   {
     section: "Databases",
     items: [
-      { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
       { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
       { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }
     ]
