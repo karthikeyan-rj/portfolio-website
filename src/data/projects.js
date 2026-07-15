@@ -5,7 +5,7 @@ export const projects = [
     description: "A real-time collaborative workspace where multiple users can interact through live cursors, shared drawing boards and room-based chat. Includes secure room access, member management, file sharing and real-time activity updates.",
     techStack: ["React", "Node.js", "Express", "Socket.IO", "MongoDB"],
     githubUrl: "https://github.com/karthikeyan-rj/multi-cursor-room",
-    liveUrl: "",
+    liveUrl: "https://multi-cursor-room.vercel.app",
     category: "Full Stack",
     featured: true
   },
@@ -24,19 +24,18 @@ export const projects = [
     title: "AcadChores",
     description: "An autonomous academic workflow assistant that understands student requests and converts them into actionable workflows. It can organise academic tasks, manage files, assist with coursework and automate repetitive student activities using AI.",
     techStack: ["React", "Python", "FastAPI", "MongoDB", "Ollama", "AI Automation"],
-    githubUrl: "",
+    githubUrl: "https://github.com/karthikeyan-rj/AcadChores-ACO",
     liveUrl: "",
     category: "AI",
     featured: true
   },
-  {
-    id: "04",
-    title: "Portfolio Website",
-    description: "This very portfolio — a hand-crafted personal site with a developer-focused dark theme, smooth animations, and clean typography. Built to represent my work and brand as a software engineering student.",
-    techStack: ["React", "Vite", "Vanilla CSS", "Responsive"],
-    githubUrl: "https://github.com/karthikeyan-rj/portfolio-website",
-    liveUrl: "",
-    category: "Frontend",
-    featured: true
-  }
+  { 
+    id: "04", 
+    title: "MediConnect — HackRax", 
+    description: "Healthcare platform built during HackRax hackathon. Focused on connecting patients and healthcare providers with a clean, practical interface. Demonstrates rapid team-based development under time pressure.", 
+    techStack: ["React", "CSS", "Hackathon", "Healthcare", "Team Project"], 
+    githubUrl: "https://github.com/karthikeyan-rj/MediConnect_Hackrax", 
+    liveUrl: "", 
+    category: "Frontend", 
+    featured: true }
 ];
