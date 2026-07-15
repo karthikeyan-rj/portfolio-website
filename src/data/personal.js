@@ -25,8 +25,6 @@ export const personalDetails = {
   ],
   stats: [
     { label: "CGPA", value: "8.39" },
-    { label: "Projects", value: "6+" },
-    { label: "IEEEXtreme", value: "~1947" }
   ],
   tickerItems: [
     "Available for Internships",
